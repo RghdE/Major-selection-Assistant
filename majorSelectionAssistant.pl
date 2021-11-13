@@ -39,7 +39,7 @@ menu:-
      Major =:= 5, exit;
      %if user enters a wrong number
      Major =\= 1 ,Major =\= 2,Major =\= 3,Major =\= 4,Major =\= 5, 
-     write('wrong choice please select a right choice '),nl, menu). 
+     write('Wrong choice, Please select a right choice '),nl, menu). 
 
 %------------------------------MAJORS--------------------------------% 
 
@@ -63,8 +63,9 @@ cyberSecurity:-
 
 	Do you have a wide background in programming, law, and the 
     willingness to adapt to new technology?
+     
     
-     * write(1. Yes/Y 2- No/N), nl,
+     write(1. Yes/Y 2- No/N), nl,
 	 read( Y/N ). 
 	if ( read( Y)) ->
 		 CYS_counter(y). %here I didn’t add N because we only need to increment counter 
@@ -88,8 +89,8 @@ If CYS_counter > 2 ->
 	write(congrats your’e done bla bla bla…), nl,
 Else 
 	character traits menu.
-
-     */
+*/
+    
     
      write('---------------------------------------').
 
@@ -99,6 +100,13 @@ computerInformation:-
 artificialIntelligence:-
      write('---------------------------------------').
  			
+%------------------------------CS QUESTIONS (question[]_CS)--------------------------------% 
+
+%------------------------------CYS QUESTIONS (question[]_CYS)--------------------------------% 
+
+%------------------------------CIS QUESTIONS (question[]_CIS)--------------------------------% 
+
+%------------------------------AI QUESTIONS (question[]_AI)--------------------------------% 
 
 exit:-
      writeln('End of Program'), fail.
