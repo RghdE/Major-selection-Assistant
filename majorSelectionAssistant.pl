@@ -2,7 +2,7 @@
  * Raghad Alessa (Leader) --- 2190040157
  * Batoola Adnan Ali 	  --- 2180004452
  * Fatimah Zaki Al Jawad  --- 2180001176
- * Majd Al-Qanbar 		  --- 2180005891
+ * Majd Al-Qanbar 	  --- 2180005891
  * Sukainah Alhammad 	  --- 2180003489
  * */
 
