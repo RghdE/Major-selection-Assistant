@@ -2,22 +2,21 @@
  * Raghad Alessa (Leader) --- 2190040157
  * Batoola Adnan Ali 	  --- 2180004452
  * Fatimah Zaki Al Jawad  --- 2180001176
- * Majd Al-Qanbar 	  --- 2180005891
+ * Majd Al-Qanbar 		  --- 2180005891
  * Sukainah Alhammad 	  --- 2180003489
  * */
 
 %-----------------------------START RULE------------------------------%
 
 start:-
-      write('*** Major selection Assistant ***'),nl,nl,
-      write('** Our system will suggests a computer major for students 
-             interested in the technical field **'),nl,
+      write('*** Major selection Assistant ***'), nl, nl,
+      write('** Our system will suggests a computer major for students interested in the technical field **'), nl,
       menu.
+
 %---------------------------MAIN MENU RULE----------------------------%
 
 menu:- 
-     nl,nl,
- 	write('Please choose the traits that best represents you?'),
+ 	write('Please choose the traits that best represents you?.'),
     nl, 
     write('1. Analytical skiils,Critical and Logical thinking,
            Patience,Creative Problem-solving,
@@ -34,7 +33,7 @@ menu:-
            Fast adaption to new technology.'),
     nl,
     write('5. Exit.'), nl,
-    write('ENTER YOUR CHOICE:')nl,
+    write('ENTER YOUR CHOICE:'), nl,
     read(Major), 
 	choice(Major).
 
@@ -97,9 +96,12 @@ Else
 	character traits menu.
 
      */
+    
      write('---------------------------------------').
+
 computerInformation:-
      write('---------------------------------------').
+
 artificialIntelligence:-
      write('---------------------------------------').
  			
