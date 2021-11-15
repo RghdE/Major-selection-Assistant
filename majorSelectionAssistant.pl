@@ -9,25 +9,20 @@
 %-----------------------------START RULE------------------------------%
 
 start:-
-      write('*** Major selection Assistant ***'), nl, nl,
-      write('** Our system will suggests a computer major for students interested in the technical field **'), nl,
+      writeln('*** Major selection Assistant ***'), nl, nl,
+      writeln('** Our system will suggests a computer major for students interested in the technical field **'),
       menu.
 
 %---------------------------MAIN MENU RULE----------------------------%
 
 menu:- 
- 	write('Please choose the traits that best represents you?.'),
-    nl, 
-    write('1- Analytical skiils,Critical and Logical thinking, Patience, Creative Problem-solving, Fast adaption to new technology.'),
-    nl,
-    write('2- Analytical Logical thinking, Strong patience, observation, and Focus, problem-solving, Decision-Making.'),
-    nl,
-    write('3- Analytical skiils, Decision-Making, Communication, and Quick-wittedness.'),
-    nl, 
-    write('4- Analytical skiils,Logical thinking,Patience, Passion in AI, Strong observation, Fast adaption to new technology.'),
-    nl,
-    write('5- Exit.'), nl,
-    write('ENTER YOUR CHOICE:'), nl,
+ 	writeln('Please choose the traits that best represents you?.'),
+    writeln('1- Analytical skiils,Critical and Logical thinking, Patience, Creative Problem-solving, Fast adaption to new technology.'),
+    writeln('2- Analytical Logical thinking, Strong patience, observation, and Focus, problem-solving, Decision-Making.'),
+    writeln('3- Analytical skiils, Decision-Making, Communication, and Quick-wittedness.'),
+    writeln('4- Analytical skiils,Logical thinking,Patience, Passion in AI, Strong observation, Fast adaption to new technology.'),
+    writeln('5- Exit.'),
+    writeln('ENTER YOUR CHOICE:'), 
     read(Major), 
 	choice(Major).
 
@@ -39,74 +34,105 @@ menu:-
      Major =:= 5, exit;
      %if user enters a wrong number
      Major =\= 1 ,Major =\= 2,Major =\= 3,Major =\= 4,Major =\= 5, 
-     write('Wrong choice, Please select a right choice '),nl, menu). 
+     writeln('Wrong choice, Please select a right choice '), menu). 
 
 %------------------------------MAJORS--------------------------------% 
+
+%------------------------------CS MAJOR--------------------------------% 
 
 computerScince:-
      write('---------------------------------------').
 
+%-------------------------------------------CYS MAJOR-------------------------------------------% 
+
+
 cyberSecurity:-
-    /*
-     * CYS character tralts: Analytical Logical thinking, 
-     * Strong patience, observation, and Focus, problem-solving,
-     *  Decision-Making 
-
-	Are you passionate about solving ciphers, cryptography science,
-    and catching cyber oriminals? 
-
-	Did you like Networks, Operating Systems, programming, 
-    and data analysis courses? 
-
-	Do you have good Problem-solving, data gathering, Research, 
-    and high focus skills? 
-
-	Do you have a wide background in programming, law, and the 
-    willingness to adapt to new technology?
-     
+    CYS_C is 0,
+    %--------------------------PASSION------------------------------%
+    check_input('Are you passionate about solving ciphers, cryptography science, and catching cyber oriminals? \n(yes/no)', 
+            CYS_ANS, check, 
+            'Invalid Input! Please enter either yes or no.',CYS_C,X),
+    % (CYS_ANS=='yes') -> inc(CYS_C,_); true,
     
-     write(1. Yes/Y 2- No/N), nl,
-	 read( Y/N ). 
-	if ( read( Y)) ->
-		 CYS_counter(y). %here I didn’t add N because we only need to increment counter 
-		%begin major counter 
-		CYS_counter(y):-
-		% ماادري وش السنتاكس المهم يناخد الفاريبل ويتساوون ببعض بعدين يزيد الكاونتر
-		y = y, c++;
-	CYS_courses(y):-
-	write(1. Yes/Y 2- No/N), nl,
-	 read( Y/N ). 
-	if ( read( Y)) ->
-		 CYS_counter(y). 
-		CYS_counter(y):-
-		y = y, c++;
-	CYS_skills(y):-
-	….
-	CYS_background(y):-
-	…..
-If CYS_counter > 2 ->
-	write(CYS job names), nl,
-	write(congrats your’e done bla bla bla…), nl,
-Else 
-	character traits menu.
-*/
+	% if not yes or no -> ouput again | print the courses if ans = no
+	% eles if ans = yes -> incr the counter and print the courses 
+	
+    %--------------------------COURSES------------------------------%
+    check_input('Did you like Networks, Operating Systems, programming, and data analysis courses? \n(yes/no)', 
+            CYS_ANS, check, 
+            'Invalid Input! Please enter either yes or no.',CYS_C,X),
+	% (CYS_ANS=='yes') -> inc(CYS_C,_); true,
     
+	%--------------------------SKILLS------------------------------%
+    check_input('Do you have good Problem-solving, data gathering, Research, and high focus skills? \n(yes/no)', 
+            CYS_ANS, check, 
+            'Invalid Input! Please enter either yes or no.',CYS_C,X),
+	% (CYS_ANS=='yes') -> inc(CYS_C,_); true,
     
-     write('---------------------------------------').
+	%--------------------------BACKGROUND------------------------------%
+    check_input('Do you have a wide background in programming, law, and the willingness 
+                 to adapt to new technology? \n(yes/no)', 
+          		  CYS_ANS, check,'Invalid Input! Please enter either yes or no.',CYS_C,X),
+	% (CYS_ANS=='yes') -> inc(CYS_C,_); true,
+    
+	%--------------------------JOBS------------------------------%
+      
+  	  (X >= 2) ->
+    	 writeln('==================Congrats on finiding your major!====================
+                  \nHope you liked our system! Please rate us!'),
+		 writeln('CYS JOBS');  
+    	 writeln('**\n**\nSorry this major didn\'t suit you! Please try again**\n**\n'), menu.
+
+%-------------------------------------------END CYS MAJOR-------------------------------------------% 
+
+
+
+%------------------------------CIS MAJOR--------------------------------% 
 
 computerInformation:-
      write('---------------------------------------').
 
+%------------------------------AI MAJOR--------------------------------% 
+
 artificialIntelligence:-
      write('---------------------------------------').
- 			
-%------------------------------CS QUESTIONS (question[]_CS)--------------------------------% 
 
-%------------------------------CYS QUESTIONS (question[]_CYS)--------------------------------% 
+check_input(Question, ANS, CheckPred, ErrorMsg, C,C1) :-
+    repeat,
+        format('~w:~n', [Question]), 
+        read(ANS),
+        (   call(CheckPred, ANS) ->  
+       		 true, !;   
+       		 format('ERROR: ~w.~n', [ErrorMsg]),
+            fail
+        ).
 
-%------------------------------CIS QUESTIONS (question[]_CIS)--------------------------------% 
+check(X):-
+    X == 'yes'; X=='no'.
 
-%------------------------------AI QUESTIONS (question[]_AI)--------------------------------% 
+%inc(0).
+inc(X,X1):-
+    X1 is X+1.
 
+/*
+ * check lower case letters in input 
+ * 1-
+	atom_is_lower(N) :-
+    atom_chars(N, [L]),
+    char_type(L, lower).
+    2- 
+    atom_is_lower(Atom) :-
+    catch(char_type(Atom, lower), _, fail).
+    
+    next_id(Id) :-
+    flag(my_id, Id, Id+1).
+    ---------------------------
+    TODO:
+    1- add global variables (incrementing++)
+    2- add check on user input (not to choose the same major again)
+    Extra:
+    3- add users rating function
+    4- enter user name and display it 
+    */
 exit:-
      writeln('End of Program'), fail.
