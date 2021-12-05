@@ -11,7 +11,7 @@ start:-
 %---------------------------READY RULE----------------------------%
 	 checkInput(Ready):-
     ( Ready == 1, menu, !;
-	  Ready == 0, exit, !;
+	Ready == 0, exit, !;
       Ready \= 0, Ready \= 1, 
       writeln('Invalid input! Please enter either (0 or 1) '), start). 
 
@@ -69,7 +69,7 @@ checkCS:-(askCS) ->
 		
    		% Display jobs %
     
-   		 writeln('						》Jobs Available for this major:-'),
+   	 writeln('》Jobs Available for this major:-'),
     	 writeln('• Software Developer'),
          writeln('• Software Engineer'),
      	 writeln('• Application Developer'),
@@ -90,7 +90,7 @@ checkCS:-(askCS) ->
     	 writeln('• Software tester'),
     	 writeln('• Mobile Application Developer'),
     	 writeln('• Network Security Administrator'),nl,nl, 
-    	writeln('Hope you liked our system! Please rate us ꈍᴗꈍ'),nl,nl, addRating		; 
+    	writeln('Hope you liked our system! Please rate us ꈍᴗꈍ'),nl,nl, addRating; 
     
     %Else%
     writeln('\n\nSorry this major didn\'t suit you! Please try again\n\n'), menu.
@@ -109,14 +109,14 @@ checkCIS:-(askCIS) ->
 		
    		% Display jobs %
     
-   		 writeln('						》Jobs Available for this major:-'),
+   	writeln('》Jobs Available for this major:-'),
          writeln('• System Analyst'),
          writeln('• Programmers'),
      	 writeln('• IT Project managers'),
      	 writeln('• Database administrator'),
     	 writeln('• Entrepreneur in IT sector'),
      	 writeln('• Continue their education in graduate school'),nl,nl, 
-    	writeln('Hope you liked our system! Please rate us ꈍᴗꈍ'),nl,nl, addRating		; 
+    	writeln('Hope you liked our system! Please rate us ꈍᴗꈍ'),nl,nl, addRating; 
     
     %Else%
     writeln('\n\nSorry this major didn\'t suit you! Please try again\n\n'), menu.
@@ -135,7 +135,7 @@ checkCYS:-(askCYS) ->
 		
    		% Display jobs %
     
-   		 writeln('						》Jobs Available for this major:-'),	
+   	writeln('》Jobs Available for this major:-'),	
          writeln('Jobs Available for this major:-'),
     	 writeln('• Forensic Specialist'),
          writeln('• Cyber Security Consultant'),
@@ -148,10 +148,10 @@ checkCYS:-(askCYS) ->
      	 writeln('• Computer Systems Consultant'),
      	 writeln('• Cybercrime Specialist'),
      	 writeln('• Digital or Computer Forensic Examiner'),nl,nl, 
-       	 writeln('Hope you liked our system! Please rate us ꈍᴗꈍ'),nl,nl, addRating		; 
+       	 writeln('Hope you liked our system! Please rate us ꈍᴗꈍ'),nl,nl, addRating; 
     
     	%Else%
-   		 writeln('\n\nSorry this major didn\'t suit you! Please try again\n\n'), menu.
+   	writeln('\n\nSorry this major didn\'t suit you! Please try again\n\n'), menu.
 
 %----------------------------AI-----------------------------------%
 
@@ -167,7 +167,7 @@ checkAI:-(askAI) ->
 		
    		% Display jobs %
          
-   		 writeln('						》Jobs Available for this major:-'),
+   	writeln('》Jobs Available for this major:-'),
          writeln('• Machine learning engineer'),
          writeln('• Robotics engineer'),
      	 writeln('• Data scientist'),
@@ -179,7 +179,7 @@ checkAI:-(askAI) ->
      	 writeln('• Statistician'),
      	 writeln('• Director of analytics'),
      	 writeln('• Data engineer'),nl,nl, 
-    	writeln('Hope you liked our system! Please rate us ꈍᴗꈍ'),nl,nl, addRating	; 
+    	writeln('Hope you liked our system! Please rate us ꈍᴗꈍ'),nl,nl, addRating; 
     
     % Else %
     writeln('\n\nSorry this major didn\'t suit you! Please try again\n\n'), menu.
