@@ -18,7 +18,7 @@ start:-
 %---------------------------MAIN MENU RULE----------------------------%
 
 menu:- 
- 	writeln('》Please choose the traits that best represents you?'),nl,
+writeln('》Please choose the traits that best represents you?'),nl,
     writeln('1- Analytical skills,Critical and Logical thinking, Patience, Creative Problem-solving, Fast adaption to new technology.'),
     writeln('2- Analytical Logical thinking, Strong patience, observation, and Focus, problem-solving, Decision-Making.'),
     writeln('3- Analytical skills, Decision-Making, Communication, and Quick-wittedness.'),
@@ -27,7 +27,7 @@ menu:-
     writeln('\n'),
     writeln('》ENTER YOUR CHOICE: 1,2,3,4 or enter 5 to exit '), 
     read(Major), 
-	choice(Major).
+    choice(Major).
 
     choice(Major):-
     (Major == 1 , checkCS;
